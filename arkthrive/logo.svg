@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460">
+  <defs>
+    <linearGradient id="lw" x1="30" y1="380" x2="230" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C038CC"/>
+      <stop offset="100%" stop-color="#5A24B0"/>
+    </linearGradient>
+    <linearGradient id="rw" x1="530" y1="380" x2="330" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5A24B0"/>
+      <stop offset="100%" stop-color="#6E30C4"/>
+    </linearGradient>
+    <linearGradient id="dt" x1="280" y1="80" x2="280" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E42020"/>
+      <stop offset="100%" stop-color="#F06830"/>
+    </linearGradient>
+    <linearGradient id="db" x1="280" y1="220" x2="280" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3A92E8"/>
+      <stop offset="100%" stop-color="#3278D8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Left wing -->
+  <polygon points="30,380 174,80 234,130 108,380" fill="url(#lw)"/>
+  <!-- Right wing -->
+  <polygon points="530,380 386,80 326,130 452,380" fill="url(#rw)"/>
+  <!-- Diamond top half (red-orange) -->
+  <polygon points="280,80 366,220 194,220" fill="url(#dt)"/>
+  <!-- Diamond bottom half (blue) -->
+  <polygon points="194,220 366,220 280,340" fill="url(#db)"/>
+  <!-- Center blush highlight -->
+  <polygon points="280,148 326,214 280,220 234,214" fill="#EEBAC6"/>
+
+  <!-- "ArkThrive" text -->
+  <text x="280" y="410" font-family="Georgia, 'Times New Roman', serif" font-size="88" font-weight="700" fill="#1B3566" text-anchor="middle" letter-spacing="-2">ArkThrive</text>
+  <!-- Tagline -->
+  <text x="280" y="448" font-family="Arial, sans-serif" font-size="28" fill="#4A5270" text-anchor="middle" letter-spacing="1">AI Coaching for Small Business</text>
+</svg>

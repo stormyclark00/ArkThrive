@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Session | ArkThrive</title>
+  <meta name="description" content="Book your AI coaching session with ArkThrive. Choose a service, pick your time, and we'll take care of the rest. Free consultations available."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" aria-label="ArkThrive" role="img">
+        <defs>
+          <linearGradient id="n-lw" x1="10" y1="135" x2="82" y2="28" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C038CC"/><stop offset="100%" stop-color="#5A24B0"/>
+          </linearGradient>
+          <linearGradient id="n-rw" x1="190" y1="135" x2="118" y2="28" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#5A24B0"/><stop offset="100%" stop-color="#6E30C4"/>
+          </linearGradient>
+          <linearGradient id="n-dt" x1="100" y1="28" x2="100" y2="72" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#E42020"/><stop offset="100%" stop-color="#F06830"/>
+          </linearGradient>
+          <linearGradient id="n-db" x1="100" y1="72" x2="100" y2="108" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#3A92E8"/><stop offset="100%" stop-color="#3278D8"/>
+          </linearGradient>
+        </defs>
+        <polygon points="10,135 62,28 84,46 38,135" fill="url(#n-lw)"/>
+        <polygon points="190,135 138,28 116,46 162,135" fill="url(#n-rw)"/>
+        <polygon points="100,28 130,72 70,72" fill="url(#n-dt)"/>
+        <polygon points="70,72 130,72 100,108" fill="url(#n-db)"/>
+        <polygon points="100,50 116,70 100,72 84,70" fill="#EEBAC6"/>
+      </svg>
+      <span>
+        <span class="nav-logo-text">ArkThrive</span>
+        <span class="nav-logo-sub">AI Coaching for Small Business</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="how.html">How It Works</a></li>
+      <li><a href="testimonials.html">Reviews</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="booking.html" class="btn btn-outline" style="padding:10px 22px;font-size:.9rem;">Free Consult</a>
+      <a href="booking.html" class="btn btn-primary" style="padding:10px 22px;font-size:.9rem;">Book a Session</a>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="page-banner">
+  <div class="container page-banner-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Book a Session</div>
+    <div class="badge">Book Your Session</div>
+    <h1>Let's Get You <em>Started</em></h1>
+    <p>Choose a service, pick your time, and we'll take care of the rest. Not sure yet? Start with the free consultation.</p>
+  </div>
+</section>
+
+<section class="booking" style="padding:60px 0 100px;background:var(--cream);">
+  <div class="container">
+    <div class="booking-layout">
+      <div class="booking-info">
+        <h3>Why Small Business Owners Love Working With Us</h3>
+        <p>We speak your language — not tech jargon. Every session is built around your actual business challenges, your budget, and your goals. No fluff, just results.</p>
+        <div class="booking-perks">
+          <div class="booking-perk">
+            <span class="bp-icon">🎯</span>
+            <div>
+              <strong>Personalized to Your Business</strong>
+              <span>We research your industry before every session</span>
+            </div>
+          </div>
+          <div class="booking-perk">
+            <span class="bp-icon">📅</span>
+            <div>
+              <strong>Flexible Scheduling</strong>
+              <span>Evenings and weekends available for busy owners</span>
+            </div>
+          </div>
+          <div class="booking-perk">
+            <span class="bp-icon">💻</span>
+            <div>
+              <strong>Virtual &amp; In-Person Options</strong>
+              <span>Meet online or schedule a local in-person visit</span>
+            </div>
+          </div>
+          <div class="booking-perk">
+            <span class="bp-icon">🔄</span>
+            <div>
+              <strong>Satisfaction Guaranteed</strong>
+              <span>If you're not happy after your session, we'll make it right</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-form-wrap">
+        <div class="step-indicator">
+          <div class="step-dot active" id="dot-1"></div>
+          <div class="step-dot" id="dot-2"></div>
+          <div class="step-dot" id="dot-3"></div>
+        </div>
+
+        <!-- Step 1: Service + Date -->
+        <div class="form-step active" id="step-1">
+          <div class="form-step-title">Step 1 — Choose Your Session</div>
+          <div class="form-group">
+            <label for="service">Session Type</label>
+            <select id="service">
+              <option value="">Select a session...</option>
+              <option value="free">Free Discovery Call — 30 min | FREE</option>
+              <option value="basics">AI Basics for Small Business — 1 hr | $100</option>
+              <option value="tools">AI Tools &amp; Workflow Setup — 1.5 hrs | $175</option>
+              <option value="strategy">Full AI Business Strategy — 2 hrs | $275</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" />
+          </div>
+          <div class="form-group">
+            <label>Preferred Time Slot</label>
+            <div class="time-slots">
+              <div class="time-slot" onclick="selectTime(this,'9:00 AM')">9:00 AM</div>
+              <div class="time-slot" onclick="selectTime(this,'10:00 AM')">10:00 AM</div>
+              <div class="time-slot" onclick="selectTime(this,'11:00 AM')">11:00 AM</div>
+              <div class="time-slot unavailable">12:00 PM</div>
+              <div class="time-slot" onclick="selectTime(this,'1:00 PM')">1:00 PM</div>
+              <div class="time-slot" onclick="selectTime(this,'2:00 PM')">2:00 PM</div>
+              <div class="time-slot" onclick="selectTime(this,'3:00 PM')">3:00 PM</div>
+              <div class="time-slot" onclick="selectTime(this,'4:00 PM')">4:00 PM</div>
+              <div class="time-slot" onclick="selectTime(this,'5:00 PM')">5:00 PM</div>
+            </div>
+          </div>
+          <div class="form-nav">
+            <button class="btn btn-primary" onclick="goStep(2)" style="margin-left:auto;">Next Step &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Contact Info -->
+        <div class="form-step" id="step-2">
+          <div class="form-step-title">Step 2 — Your Information</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Jane" />
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="jane@yourbusiness.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 123-4567" />
+          </div>
+          <div class="form-group">
+            <label for="business">Business Name &amp; Type</label>
+            <input type="text" id="business" placeholder="e.g. Smith's Bakery – Bakery &amp; Café" />
+          </div>
+          <div class="form-group">
+            <label for="goals">What's your biggest challenge right now? <span style="color:var(--gray3);font-weight:400;">(optional)</span></label>
+            <textarea id="goals" placeholder="e.g. I spend too much time answering the same questions from customers..."></textarea>
+          </div>
+          <div class="form-nav">
+            <button class="btn btn-outline" onclick="goStep(1)">&larr; Back</button>
+            <button class="btn btn-primary" onclick="goStep(3)">Review &amp; Confirm &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Confirm -->
+        <div class="form-step" id="step-3">
+          <div class="form-step-title">Step 3 — Confirm Your Booking</div>
+          <div id="summary" style="background:var(--gray1);border-radius:var(--radius-sm);padding:20px;margin-bottom:24px;font-size:.9rem;line-height:2;"></div>
+          <div class="form-group">
+            <label><input type="checkbox" id="agree" style="width:auto;margin-right:8px;" />
+            I understand sessions are virtual (video call) unless otherwise arranged, and I agree to the 24-hour cancellation policy.</label>
+          </div>
+          <div class="form-nav">
+            <button class="btn btn-outline" onclick="goStep(2)">&larr; Back</button>
+            <button class="btn btn-primary" onclick="submitBooking()">Confirm Booking ✓</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="form-step" id="step-success">
+          <div class="success-state">
+            <div class="success-icon">🎉</div>
+            <h3>You're all set!</h3>
+            <p>We've received your booking request and will confirm within 1 business hour with your meeting link and prep materials.</p>
+
+            <!-- Calendar Buttons -->
+            <div style="margin-top:28px;padding:24px;background:var(--gray1);border-radius:var(--radius-sm);border:1px solid var(--gray2);">
+              <p style="font-size:.85rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">📅 Add to Your Calendar</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+                <button onclick="addToOutlook()" class="btn btn-outline" style="padding:10px 18px;font-size:.88rem;gap:6px;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/32px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" style="height:16px;width:auto;" alt="" onerror="this.style.display='none'"/>
+                  Outlook Desktop
+                </button>
+                <a id="outlook-web-btn" href="#" target="_blank" class="btn btn-outline" style="padding:10px 18px;font-size:.88rem;gap:6px;">
+                  🌐 Outlook Web
+                </a>
+                <a id="google-cal-btn" href="#" target="_blank" class="btn btn-outline" style="padding:10px 18px;font-size:.88rem;gap:6px;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Calendar_icon_%282020%29.svg/32px-Google_Calendar_icon_%282020%29.svg.png" style="height:16px;width:auto;" alt="" onerror="this.style.display='none'"/>
+                  Google Calendar
+                </a>
+              </div>
+            </div>
+
+            <a href="services.html" class="btn btn-primary" style="margin-top:20px;">Explore More Sessions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" style="height:44px;width:auto;flex-shrink:0" aria-hidden="true">
+            <defs>
+              <linearGradient id="f-lw" x1="10" y1="135" x2="82" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C038CC"/><stop offset="100%" stop-color="#5A24B0"/>
+              </linearGradient>
+              <linearGradient id="f-rw" x1="190" y1="135" x2="118" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#5A24B0"/><stop offset="100%" stop-color="#6E30C4"/>
+              </linearGradient>
+              <linearGradient id="f-dt" x1="100" y1="28" x2="100" y2="72" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E42020"/><stop offset="100%" stop-color="#F06830"/>
+              </linearGradient>
+              <linearGradient id="f-db" x1="100" y1="72" x2="100" y2="108" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#3A92E8"/><stop offset="100%" stop-color="#3278D8"/>
+              </linearGradient>
+            </defs>
+            <polygon points="10,135 62,28 84,46 38,135" fill="url(#f-lw)"/>
+            <polygon points="190,135 138,28 116,46 162,135" fill="url(#f-rw)"/>
+            <polygon points="100,28 130,72 70,72" fill="url(#f-dt)"/>
+            <polygon points="70,72 130,72 100,108" fill="url(#f-db)"/>
+            <polygon points="100,50 116,70 100,72 84,70" fill="#EEBAC6"/>
+          </svg>
+          <div>
+            <span class="logo-text">ArkThrive</span>
+            <span class="logo-sub">AI Coaching for Small Business</span>
+          </div>
+        </div>
+        <p>We help small and local business owners harness the power of AI — without the tech overwhelm. Simple coaching, real results.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="Instagram">📸</a>
+          <a href="#" title="LinkedIn">💼</a>
+          <a href="#" title="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sessions</h4>
+        <ul>
+          <li><a href="booking.html">Free Discovery Call</a></li>
+          <li><a href="booking.html">AI Basics — $100</a></li>
+          <li><a href="booking.html">Tools &amp; Workflow — $175</a></li>
+          <li><a href="booking.html">Full Strategy — $275</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">About ArkThrive</a></li>
+          <li><a href="how.html">How It Works</a></li>
+          <li><a href="testimonials.html">Client Stories</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:stormy@arkthrive.com">stormy@arkthrive.com</a></li>
+          <li><a href="tel:+18706152647">(870) 615-2647</a></li>
+          <li><a href="booking.html">Book a Session</a></li>
+          <li><a href="booking.html">Free Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ArkThrive. All rights reserved.</p>
+      <p><a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;margin-right:16px;">Privacy Policy</a><a href="#" style="color:rgba(255,255,255,.5);text-decoration:none;">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Shared state ──
+  let selectedTime = '';
+  let bookingData  = {};
+
+  const SERVICE_MAP = {
+    free:     { label: 'Free Discovery Call',               duration: 30  },
+    basics:   { label: 'AI Basics for Small Business',      duration: 60  },
+    tools:    { label: 'AI Tools & Workflow Setup',         duration: 90  },
+    strategy: { label: 'Full AI Business Strategy',         duration: 120 },
+  };
+
+  // ── Time slot picker ──
+  function selectTime(el, time) {
+    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedTime = time;
+  }
+
+  // ── Step navigation ──
+  function goStep(n) {
+    if (n === 2) {
+      if (!document.getElementById('service').value) { alert('Please select a session type.'); return; }
+      if (!document.getElementById('date').value)    { alert('Please choose a preferred date.'); return; }
+      if (!selectedTime)                             { alert('Please select a time slot.'); return; }
+    }
+    if (n === 3) {
+      if (!document.getElementById('fname').value.trim())    { alert('Please enter your first name.'); return; }
+      if (!document.getElementById('email').value.trim())    { alert('Please enter your email address.'); return; }
+      if (!document.getElementById('business').value.trim()) { alert('Please enter your business name.'); return; }
+      buildSummary();
+    }
+    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-' + n).classList.add('active');
+    updateDots(n);
+  }
+
+  function updateDots(active) {
+    for (let i = 1; i <= 3; i++) {
+      const d = document.getElementById('dot-' + i);
+      d.classList.remove('active', 'done');
+      if (i < active)   d.classList.add('done');
+      if (i === active) d.classList.add('active');
+    }
+  }
+
+  function buildSummary() {
+    const s     = document.getElementById('service').value;
+    const d     = document.getElementById('date').value;
+    const fname = document.getElementById('fname').value;
+    const lname = document.getElementById('lname').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const biz   = document.getElementById('business').value;
+    const info  = SERVICE_MAP[s] || { label: s, duration: 60 };
+    const dateStr = new Date(d + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+
+    document.getElementById('summary').innerHTML = `
+      <strong style="color:var(--navy);display:block;margin-bottom:8px;">Booking Summary</strong>
+      <div><strong>Session:</strong> ${info.label} (${info.duration} min)</div>
+      <div><strong>Date:</strong> ${dateStr}</div>
+      <div><strong>Time:</strong> ${selectedTime}</div>
+      <div><strong>Name:</strong> ${fname} ${lname}</div>
+      <div><strong>Email:</strong> ${email}</div>
+      ${phone ? `<div><strong>Phone:</strong> ${phone}</div>` : ''}
+      <div><strong>Business:</strong> ${biz}</div>
+    `;
+  }
+
+  // ── Submit & trigger calendar ──
+  function submitBooking() {
+    if (!document.getElementById('agree').checked) {
+      alert('Please agree to the cancellation policy to confirm your booking.');
+      return;
+    }
+
+    const s   = document.getElementById('service').value;
+    const d   = document.getElementById('date').value;
+    const fn  = document.getElementById('fname').value;
+    const ln  = document.getElementById('lname').value;
+    const em  = document.getElementById('email').value;
+    const ph  = document.getElementById('phone').value;
+    const biz = document.getElementById('business').value;
+    const gls = document.getElementById('goals').value;
+    const info = SERVICE_MAP[s] || { label: s, duration: 60 };
+
+    // Store for calendar generation
+    bookingData = { service: s, label: info.label, duration: info.duration, date: d, time: selectedTime, fname: fn, lname: ln, email: em, phone: ph, biz };
+
+    // Send booking email
+    const subject = encodeURIComponent(`New Booking Request: ${info.label} — ${fn} ${ln}`);
+    const body    = encodeURIComponent(
+      `New Booking Request\n\nSession: ${info.label} (${info.duration} min)\nDate: ${d}\nTime: ${selectedTime}\n\nName: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph || 'N/A'}\nBusiness: ${biz}\n\nGoals/Challenges:\n${gls || 'Not provided'}`
+    );
+    window.location.href = `mailto:stormy@arkthrive.com?subject=${subject}&body=${body}`;
+
+    // Build calendar links then show success
+    buildCalendarLinks();
+    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-success').classList.add('active');
+    document.querySelector('.step-indicator').style.display = 'none';
+  }
+
+  // ── Calendar helpers ──
+  function parseDateTime(dateStr, timeStr) {
+    const [year, month, day] = dateStr.split('-').map(Number);
+    const isPM  = timeStr.includes('PM');
+    let [h, m]  = timeStr.replace(/ [AP]M/, '').split(':').map(Number);
+    if (isPM  && h !== 12) h += 12;
+    if (!isPM && h === 12) h  = 0;
+    return { year, month, day, h, m };
+  }
+
+  function addMinutes({ year, month, day, h, m }, mins) {
+    const total = h * 60 + m + mins;
+    return { year, month, day, h: Math.floor(total / 60) % 24, m: total % 60 };
+  }
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function toICSDate({ year, month, day, h, m }) {
+    return `${year}${pad(month)}${pad(day)}T${pad(h)}${pad(m)}00`;
+  }
+
+  function toISO({ year, month, day, h, m }) {
+    return `${year}-${pad(month)}-${pad(day)}T${pad(h)}:${pad(m)}:00`;
+  }
+
+  function buildCalendarLinks() {
+    const { service, label, duration, date, time, fname, lname, email, biz } = bookingData;
+    const start = parseDateTime(date, time);
+    const end   = addMinutes(start, duration);
+
+    const title   = `ArkThrive AI Coaching: ${label}`;
+    const details = `AI Coaching Session with ArkThrive\nSession: ${label} (${duration} min)\nBusiness: ${biz}\n\nYour coach: Stormy\nContact: stormy@arkthrive.com | (870) 615-2647\n\nMeeting link will be sent in your confirmation email.`;
+    const location = 'Virtual – link in confirmation email';
+
+    // Outlook Web Calendar link (works for Outlook.com & Office 365)
+    const outlookURL = 'https://outlook.live.com/calendar/0/deeplink/compose?' +
+      `subject=${encodeURIComponent(title)}` +
+      `&startdt=${encodeURIComponent(toISO(start))}` +
+      `&enddt=${encodeURIComponent(toISO(end))}` +
+      `&body=${encodeURIComponent(details)}` +
+      `&location=${encodeURIComponent(location)}`;
+    document.getElementById('outlook-web-btn').href = outlookURL;
+
+    // Google Calendar link
+    const gcalURL = 'https://www.google.com/calendar/render?action=TEMPLATE' +
+      `&text=${encodeURIComponent(title)}` +
+      `&dates=${toICSDate(start)}/${toICSDate(end)}` +
+      `&details=${encodeURIComponent(details)}` +
+      `&location=${encodeURIComponent(location)}`;
+    document.getElementById('google-cal-btn').href = gcalURL;
+  }
+
+  // ── Outlook Desktop: download .ics file ──
+  function addToOutlook() {
+    const { label, duration, date, time, fname, lname, email, biz } = bookingData;
+    const start   = parseDateTime(date, time);
+    const end     = addMinutes(start, duration);
+    const now     = new Date().toISOString().replace(/[-:.]/g, '').slice(0, 15) + 'Z';
+    const uid     = `arkthrive-${Date.now()}@arkthrive.com`;
+
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//ArkThrive//AI Coaching Booking//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:REQUEST',
+      'BEGIN:VEVENT',
+      `UID:${uid}`,
+      `DTSTAMP:${now}`,
+      `DTSTART:${toICSDate(start)}`,
+      `DTEND:${toICSDate(end)}`,
+      `SUMMARY:ArkThrive AI Coaching: ${label}`,
+      `DESCRIPTION:AI Coaching Session with ArkThrive\\n` +
+        `Session: ${label} (${duration} min)\\n` +
+        `Business: ${biz}\\n\\n` +
+        `Your coach: Stormy\\n` +
+        `Contact: stormy@arkthrive.com | (870) 615-2647\\n\\n` +
+        `Meeting link will be sent in your confirmation email.`,
+      `LOCATION:Virtual – link in confirmation email`,
+      `ORGANIZER;CN=ArkThrive:mailto:stormy@arkthrive.com`,
+      `ATTENDEE;CN=${fname} ${lname};RSVP=TRUE:mailto:${email}`,
+      'STATUS:TENTATIVE',
+      'BEGIN:VALARM',
+      'TRIGGER:-PT30M',
+      'ACTION:DISPLAY',
+      'DESCRIPTION:Reminder: ArkThrive AI Coaching session in 30 minutes',
+      'END:VALARM',
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'arkthrive-session.ics';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  // ── FAQ accordion (if needed) ──
+  function toggleFaq(el) {
+    const item   = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ── Set min date ──
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+  });
+</script>
+
+</body>
+</html>
